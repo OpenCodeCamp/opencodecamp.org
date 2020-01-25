@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = @Localizer["PageTitle"];
+}
+
+<div class="content-wrapper single-column-layout" style="padding-top: 8rem;padding-bottom: 20rem;">
+    <h1>@ViewData["Title"]</h1>
+    <p>@Localizer["Message"]</p>
+</div>
+<style type="text/css">
+    section#newsletter-signup {
+        display: none !important;
+        visibility: hidden !important;
+    }
+</style>

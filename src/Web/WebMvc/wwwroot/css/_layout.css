@@ -1,0 +1,317 @@
+﻿
+/* @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap'); */
+/*.application_header {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+}*/
+/*.logo-on-dark-background .application-nav-logo {
+    fill: #fff
+}
+
+.quicky_forecast .application-nav-logo {
+    fill: #5DB8F1
+}*/
+
+/*.mobile-menu .application-nav-logo {
+    fill: #F95E4F
+}*/
+
+/*@media screen and (max-width: 890px) {
+    .application-nav-logo .logo-wordmark {
+        display: none
+    }
+}
+
+.application-nav-logo .logo-only {
+    height: 50px;
+    width: 50px
+}
+
+@media screen and (min-width: 890px) {
+    .application-nav-logo .logo-only {
+        display: none
+    }
+}*/
+
+.application-nav-item {
+    display: inline-block;
+    margin-right: 1.5rem
+}
+
+@media screen and (min-width: 1600px) {
+    .application-nav-item {
+        font-size: 1.2em
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .application-nav-item {
+        margin-right: 0.75rem
+    }
+}
+
+.application-nav-item:last-of-type {
+    margin-right: 3rem
+}
+
+@media screen and (max-width: 890px) {
+    .application-nav-item {
+        margin-top: 1.5rem;
+        margin-right: 0;
+        display: block
+    }
+
+        .application-nav-item:last-of-type {
+            margin-right: 0
+        }
+}
+.mobile-menu .application-nav-link, .mobile-menu .application-nav-link {
+    border-color: rgba(61,62,68,0.3);
+    color: #3d3e44
+}
+
+    .mobile-menu .application-nav-link:active, body.home .mobile-menu .application-nav-link:focus, .mobile-menu .application-nav-link:active, .mobile-menu .application-nav-link:focus, .mobile-menu .application-nav-link:hover {
+        border-color: rgba(224,49,49,0.6);
+        color: #F95E4F
+    }
+/*.application-nav-hire-us-cta {
+    position: absolute;
+    top: 30px;
+    right: 1.5rem;
+    font-weight: 500;
+}*/
+
+.application-nav-hire-us {
+    background: #F95E4F;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 500;
+    padding: 15px;
+}
+
+.application-nav-link:active, .application-nav-link:focus, .application-nav-link:hover {
+    border-color: rgba(224,49,49,0.6);
+    color: #F95E4F;
+}
+
+.application-nav-hire-us:active, .application-nav-hire-us:focus, .application-nav-hire-us:hover, .application-nav-hire-us:visited {
+    color: rgba(255,255,255,0.8);
+}
+
+.application-nav-hire-us-cta, .application-nav-mobile-icon {
+    display: none;
+}
+
+.application-nav-mobile-icon {
+    position: absolute;
+    top: 24px;
+    left: 1.5rem;
+    border-bottom: 0;
+    float: right;
+    font-size: 1.5em;
+}
+
+/*.application-nav-logo .logo-only {
+    height: 50px;
+    width: 50px;
+}*/
+/*#newsletter-submit-button:hover {
+        }*/
+
+
+
+/*@media screen and (min-width: 890px) {
+    .application-nav-logo .logo-only {
+        display: none;
+    }
+}*/
+
+/*@media screen and (min-width: 890px){
+.newsletter-email-input {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+     width: 57.35098%;
+}
+}*/
+
+@media screen and (min-width: 890px) {
+    .application-nav-logo {
+        display: block;
+        float: left;
+        margin-left: 3rem
+    }
+}
+
+
+.application-nav-link {
+    border-color: rgba(61,62,68,0.3);
+    color: #3d3e44;
+    border-width: 0
+}
+
+    .application-nav-link:active, .application-nav-link:focus, .application-nav-link:hover {
+        border-color: rgba(224,49,49,0.6);
+        color: #F95E4F
+    }
+
+
+
+
+.application-nav {
+    float: right;
+    margin-top: 0.35rem;
+}
+
+.application-nav-item {
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+.application-nav-link {
+    border-color: rgba(61,62,68,0.3);
+    color: #3d3e44;
+    border-width: 0;
+}
+
+    .application-nav-link:active, .application-nav-link:focus, .application-nav-link:hover {
+        border-color: rgba(224,49,49,0.6);
+        color: #F95E4F;
+    }
+
+
+/*@media screen and (min-width: 890px){
+.newsletter-submit-button {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+    margin-top: 0;
+}
+}
+@media screen and (min-width: 890px){
+.newsletter-submit-button:last-child {
+    margin-right: 0;
+}
+}*/
+
+
+/* privacy notice */
+
+.privacy-notice {
+    position: fixed;
+    bottom: 0;
+    background-color: #F95E4F;
+    box-shadow: 0 0 0.75rem rgba(0,0,0,0.25);
+    color: #fff;
+    /*display: none;*/
+    padding: 0.75rem;
+    text-align: center;
+    width: 100%;
+    z-index: 99;
+}
+
+    .privacy-notice .button-small {
+        border: 0;
+        margin-left: 1.5rem;
+    }
+
+    .privacy-notice a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+
+
+@media screen and (max-width: 480px) {
+
+    .application-nav {
+        padding-top: 0;
+        padding-bottom: 1.5rem;
+        display: none;
+        text-align: center;
+        width: 100%
+    }
+
+    div.logo-wordmark {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 890px) {
+
+    .application-nav {
+        display: none;
+        padding-bottom: 0;
+        width: auto;
+    }
+
+    .application-nav-item {
+        margin-top: 1.5rem;
+        margin-right: 0;
+        display: block;
+    }
+
+
+    .application-nav-hire-us-cta, .application-nav-mobile-icon {
+        border-color: rgba(224,49,49,0.3);
+        color: #F95E4F;
+        display: block;
+    }
+
+    /*.application-nav-logo .logo-wordmark {
+        display: none;
+    }*/
+
+    .application-nav-hire-us-cta, .application-nav-mobile-icon {
+        border-color: rgba(224,49,49,0.3);
+        color: #F95E4F;
+        display: block;
+    }
+
+        .application-nav-hire-us-cta:active, .application-nav-hire-us-cta:focus, .application-nav-hire-us-cta:hover, .application-nav-mobile-icon:active, .application-nav-mobile-icon:focus, .application-nav-mobile-icon:hover {
+            border-color: rgba(224,49,49,0.6);
+            color: #b32727;
+        }
+
+    /*.application-nav-logo {
+        display: inline-block;
+        text-align: center;
+    }
+
+        .application-nav-logo .logo-wordmark {
+            display: none;
+        }*/
+
+
+}
+
+/*
+header.application_header.mobile-menu {
+    background-color: #fff;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1);
+}
+*/
+
+@media screen and (max-width: 890px) {
+    .mobile-menu .application-nav {
+        display: block;
+        padding-bottom: 1.5rem;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+        header.application_header .application-nav {
+            display: block;
+            padding-bottom: 1.5rem;
+            width: 100%;
+        }
+}

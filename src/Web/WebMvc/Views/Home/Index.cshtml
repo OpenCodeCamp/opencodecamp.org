@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = @Localizer["PageTitle"];
+}
+
+<header>
+    <div class='single-column-layout'>
+        <h1 class='title-primary titleb800'>
+            @Localizer["PrimaryTitle"]
+            <span class='highlighted-text'>
+                @Localizer["HighlightedTitle"]
+            </span>
+        </h1>
+    </div>
+</header>
+<div class='content-wrapper single-column-layout'>
+    @Localizer["FirstParagraph"]
+    <section>
+        <h2>@Localizer["CharterTitle"]</h2>
+        @Localizer["CharterContent"]
+    </section>
+</div>

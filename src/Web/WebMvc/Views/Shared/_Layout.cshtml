@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="@System.Globalization.CultureInfo.CurrentUICulture">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content='IE=edge' http-equiv='X-UA-Compatible' />
+    <title>Open Code Camp @ViewData["Title"]</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/layout.css" />
+</head>
+<body>
+    <header class="application_header">
+        <a class="application-nav-logo" href="#">
+            <div class="logo-wordmark">
+                <img src="~/img/ant01.png" width="35" height="35" /><div>Open Code Camp</div>
+            </div>
+            @*<div class="logo-only">
+                <img src="~/img/ant01.png" width="35" height="35" />
+            </div>*@
+        </a>
+        @*<a class="application-nav-mobile-icon" href="#">&#9776;</a><a class="application-nav-hire-us-cta" href="#">Engagez-nous</a>
+        <nav class='application-nav'>
+                <ul>
+                    <li class='application-nav-item'>
+                        <a class="application-nav-link" href="#">Services</a>
+                    </li>
+                    <li class='application-nav-item'>
+                        <a class="application-nav-link" href="#">Réalisations</a>
+                    </li>
+                    <li class='application-nav-item'>
+                        <a class="application-nav-link" href="#">L'équipe</a>
+                    </li>
+                    <li class='application-nav-item'>
+                        <a class="application-nav-link application-nav-hire-us" href="#">Commencez-un projet avec nous</a>
+                    </li>
+                </ul>
+            </nav>*@
+    </header>
+    <main class='application-main-content' id='main'>
+        @RenderBody()
+        @await Html.PartialAsync("_NewsletterSubscription")
+    </main>
+
+
+    <footer aria-labelledby='footer' class='application-footer links-no-underline'>
+
+        <div class='copyright'>
+            <strong>
+                &copy; 2019 - 2020
+                OpenCodeCamp
+            </strong>
+            @* <!--<p></p>-->
+                <!--
+                <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Code of Conduct</a></li>
+                <li><a href="#">Purpose</a></li>
+                <li><a href="#">Credits</a></li>
+                </ul>-->*@
+        </div>
+    </footer>
+    @*<div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2019 - WebMvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await Html.PartialAsync("_NewsletterSubscriptionJs")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

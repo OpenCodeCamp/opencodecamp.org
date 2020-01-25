@@ -1,0 +1,36 @@
+﻿@model OpenCodeCamp.WebMvc.ViewModels.NewsletterSubscriptionViewModels.NewsletterSubscriptionFormViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+@inject IViewLocalizer Localizer
+@{
+}
+
+<section id="newsletter-signup">
+    <div class="single-column-layout">
+        <div id="newsletter-signup-title">
+            @Localizer["Title"]
+        </div>
+        <form id="SubscribeToNewsletter_form" class="newsletter-signup-form" data-ajax="true" data-ajax-method="post">
+            <input type="hidden" id="hdn_ui_culture" value="@(System.Globalization.CultureInfo.CurrentUICulture.Name.Contains("fr") ? "fr" : "en")" />
+            @*@if (ViewData.ModelState.Values.SelectMany(err => err.Errors).Any())
+        {
+            <div class="row">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(err => err.Errors))
+                {
+                    <div class="alert alert-warning" role="alert">
+                        &nbsp;@error.ErrorMessage
+                    </div>
+                }
+            </div>
+        }*@
+            <input type="email" asp-for="EmailAddress" id="newsletter-email-input" placeholder="@Localizer["EmailInputPlaceholder"]" />
+            <span asp-validation-for="EmailAddress" class="alert alert-danger"></span>
+            <br /><button type="submit" id="newsletter-submit-button">@Localizer["SubmitButtonText"]</button>
+            <div id="form-error-msg" class="newsletter-updated-msg-ctn" style="display:none;">@Localizer["ErrorOccurred"]</div>
+        </form>
+        <div id="subscribeToNewsletter-successMsg-ctn" class="newsletter-updated-msg-ctn" style="display:none;">
+            <p>@Localizer["ConfirmationMessage"]</p>
+        </div>
+    </div>
+</section>
