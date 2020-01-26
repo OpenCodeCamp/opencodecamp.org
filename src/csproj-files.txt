@@ -1,0 +1,17 @@
+COPY src/BuildingBlocks/EventBus/CommandBus/*.csproj /src/src/BuildingBlocks/EventBus/CommandBus/
+COPY src/BuildingBlocks/EventBus/EventBus/*.csproj /src/src/BuildingBlocks/EventBus/EventBus/
+COPY src/BuildingBlocks/EventBus/EventBusRabbitMQ/*.csproj /src/src/BuildingBlocks/EventBus/EventBusRabbitMQ/
+COPY src/BuildingBlocks/EventBus/EventBusServiceBus/*.csproj /src/src/BuildingBlocks/EventBus/EventBusServiceBus/
+COPY src/BuildingBlocks/EventBus/IntegrationEventLogEF/*.csproj /src/src/BuildingBlocks/EventBus/IntegrationEventLogEF/
+COPY src/BuildingBlocks/WebHostCustomization/WebHost.Customization/*.csproj /src/src/BuildingBlocks/WebHostCustomization/WebHost.Customization/
+COPY src/Services/Marketing/Marketing.Api/*.csproj /src/src/Services/Marketing/Marketing.Api/
+COPY src/Services/Marketing/Marketing.Domain/*.csproj /src/src/Services/Marketing/Marketing.Domain/
+COPY src/Services/Marketing/Marketing.FunctionalTests/*.csproj /src/src/Services/Marketing/Marketing.FunctionalTests/
+COPY src/Services/Marketing/Marketing.Infrastructure/*.csproj /src/src/Services/Marketing/Marketing.Infrastructure/
+COPY src/Services/Marketing/Marketing.UnitTests/*.csproj /src/src/Services/Marketing/Marketing.UnitTests/
+COPY src/Services/OutgoingCommunications/OutgoingCommunications.Api/*.csproj /src/src/OutgoingCommunications/OutgoingCommunications/OutgoingCommunications.Api/
+COPY src/Services/OutgoingCommunications/OutgoingCommunications.Domain/*.csproj /src/src/Services/OutgoingCommunications/OutgoingCommunications.Domain/
+COPY src/Services/OutgoingCommunications/OutgoingCommunications.FunctionalTests/*.csproj /src/src/Services/OutgoingCommunications/OutgoingCommunications.FunctionalTests/
+COPY src/Services/OutgoingCommunications/OutgoingCommunications.Infrastructure/*.csproj /src/src/Services/OutgoingCommunications/OutgoingCommunications.Infrastructure/
+COPY src/Services/OutgoingCommunications/OutgoingCommunications.UnitTests/*.csproj /src/src/Services/OutgoingCommunications/OutgoingCommunications.UnitTests/
+COPY src/Web/WebMvc/*.csproj /src/src/Web/WebMvc/

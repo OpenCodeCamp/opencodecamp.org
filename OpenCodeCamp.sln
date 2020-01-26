@@ -43,8 +43,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutgoingCommunications.Doma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutgoingCommunications.Infrastructure", "src\Services\OutgoingCommunications\OutgoingCommunications.Infrastructure\OutgoingCommunications.Infrastructure.csproj", "{5CBFAFF5-A23D-4E54-9C75-611298FE2653}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutgoingCommunications.EmailDocumentsLibrary", "src\Services\OutgoingCommunications\OutgoingCommunications.EmailDocumentsLibrary\OutgoingCommunications.EmailDocumentsLibrary.csproj", "{7BA8F7BC-F3A1-41C3-B3D3-84F5785AD75E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutgoingCommunications.Emails", "src\Services\OutgoingCommunications\OutgoingCommunications.Emails\OutgoingCommunications.Emails.csproj", "{CAC35727-4C3B-453B-9177-42D7039298B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OutgoingCommunications.EmailsLibrary", "OutgoingCommunications.EmailsLibrary", "{4DFDC491-67E2-4CCA-BD3D-20264AB5436E}"
@@ -138,10 +136,6 @@ Global
 		{5CBFAFF5-A23D-4E54-9C75-611298FE2653}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CBFAFF5-A23D-4E54-9C75-611298FE2653}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CBFAFF5-A23D-4E54-9C75-611298FE2653}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7BA8F7BC-F3A1-41C3-B3D3-84F5785AD75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7BA8F7BC-F3A1-41C3-B3D3-84F5785AD75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7BA8F7BC-F3A1-41C3-B3D3-84F5785AD75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7BA8F7BC-F3A1-41C3-B3D3-84F5785AD75E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CAC35727-4C3B-453B-9177-42D7039298B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CAC35727-4C3B-453B-9177-42D7039298B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAC35727-4C3B-453B-9177-42D7039298B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -190,7 +184,6 @@ Global
 		{284C1F9E-1AFD-493F-A4D4-92D1C3C51DF9} = {AB42CE70-D309-4EAD-BCE4-C311F54B009B}
 		{1C4C851E-1EAB-4B38-8825-A5EE8EB39763} = {AB42CE70-D309-4EAD-BCE4-C311F54B009B}
 		{5CBFAFF5-A23D-4E54-9C75-611298FE2653} = {AB42CE70-D309-4EAD-BCE4-C311F54B009B}
-		{7BA8F7BC-F3A1-41C3-B3D3-84F5785AD75E} = {AB42CE70-D309-4EAD-BCE4-C311F54B009B}
 		{CAC35727-4C3B-453B-9177-42D7039298B1} = {AB42CE70-D309-4EAD-BCE4-C311F54B009B}
 		{4DFDC491-67E2-4CCA-BD3D-20264AB5436E} = {AB42CE70-D309-4EAD-BCE4-C311F54B009B}
 		{93D8A779-83DF-4682-9E81-0234D09041ED} = {4DFDC491-67E2-4CCA-BD3D-20264AB5436E}

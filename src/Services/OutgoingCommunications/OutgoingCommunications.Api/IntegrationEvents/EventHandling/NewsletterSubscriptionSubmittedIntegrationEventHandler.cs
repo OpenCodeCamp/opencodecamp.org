@@ -4,16 +4,12 @@
     using Microsoft.Extensions.Options;
     using OpenCodeCamp.BuildingBlocks.EventBus.Abstractions;
     using OpenCodeCamp.BuildingBlocks.EventBus.Events;
-    using OpenCodeCamp.OutgoingCommunications.EmailDocumentsLibrary.Services;
-    using OpenCodeCamp.OutgoingCommunications.EmailDocumentsLibrary.Views.Emails.ConfirmNewsletterSubscription;
     using OpenCodeCamp.OutgoingCommunications.Emails;
     using OpenCodeCamp.Services.OutgoingCommunications.Api.Infrastructure.Configuration;
     using OpenCodeCamp.Services.OutgoingCommunications.Api.IntegrationEvents.Events;
     using OpenCodeCamp.Services.OutgoingCommunications.Api.Services;
     using Serilog.Context;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
 
     /// <summary>

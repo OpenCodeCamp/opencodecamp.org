@@ -1,10 +1,7 @@
 ﻿namespace OpenCodeCamp.Services.OutgoingCommunications.Api.Services
 {
-    using Microsoft.Extensions.Options;
     using OpenCodeCamp.Services.OutgoingCommunications.Api.Infrastructure.Configuration;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Net;
     using System.Net.Mail;
     using System.Threading.Tasks;
@@ -50,8 +47,6 @@
             {
                 throw;
             }
-
-            return false;
         }
     }
 }
