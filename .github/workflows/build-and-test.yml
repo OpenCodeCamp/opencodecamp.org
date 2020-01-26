@@ -1,4 +1,4 @@
-name: Main
+name: Build & Test
 
 on: [push]
 
@@ -19,6 +19,9 @@ jobs:
       run: dotnet build src/Services/OutgoingCommunications/OutgoingCommunications.Api/OutgoingCommunications.Api.csproj --configuration Release
     - name: Build website
       run: dotnet build src/Web/WebMvc/WebMvc.csproj
+    - name: Run marketing API unit tests
+      run: dotnet test --configuration Release
+      working-directory: ./src/Services/Marketing/Marketing.UnitTests/Marketing.UnitTests.csproj
     - name: Run the marketing API sonar analysis
       uses: Secbyte/dotnet-sonarscanner@2.1
       with:
