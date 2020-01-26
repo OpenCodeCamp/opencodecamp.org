@@ -20,8 +20,7 @@ jobs:
     - name: Build website
       run: dotnet build src/Web/WebMvc/WebMvc.csproj
     - name: Run marketing API unit tests
-      run: dotnet test --configuration Release
-      working-directory: ./src/Services/Marketing/Marketing.UnitTests/Marketing.UnitTests.csproj
+      run: dotnet test src/Services/Marketing/Marketing.UnitTests/Marketing.UnitTests.csproj --configuration Release
     - name: Run the marketing API sonar analysis
       uses: Secbyte/dotnet-sonarscanner@2.1
       with:
