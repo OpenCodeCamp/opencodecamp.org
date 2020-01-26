@@ -21,9 +21,3 @@ jobs:
       run: dotnet build src/Web/WebMvc/WebMvc.csproj
     - name: Run marketing API unit tests
       run: dotnet test src/Services/Marketing/Marketing.UnitTests/Marketing.UnitTests.csproj --configuration Release
-    - name: Run the marketing API sonar analysis
-      uses: Secbyte/dotnet-sonarscanner@2.1
-      with:
-        projectName: Marketing API
-        projectBaseDir: src/Services/Marketing/Marketing.Api/Marketing.Api.csproj
-        orgnization: Open Code Camp
