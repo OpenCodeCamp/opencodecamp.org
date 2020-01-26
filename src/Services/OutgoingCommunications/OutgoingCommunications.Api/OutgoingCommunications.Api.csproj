@@ -30,7 +30,6 @@
     <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus\EventBus.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\IntegrationEventLogEF\IntegrationEventLogEF.csproj" />
     <ProjectReference Include="..\OutgoingCommunications.Domain\OutgoingCommunications.Domain.csproj" />
-    <ProjectReference Include="..\OutgoingCommunications.EmailDocumentsLibrary\OutgoingCommunications.EmailDocumentsLibrary.csproj" />
     <ProjectReference Include="..\OutgoingCommunications.Emails\OutgoingCommunications.Emails.csproj" />
   </ItemGroup>
 

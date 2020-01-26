@@ -1,0 +1,17 @@
+name: Code quality analysis
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Start the code quality analysis with Sonar
+      run: Start code analysis
+    - name: Run Sonar Cloud analysis
+      uses: SonarSource/sonarcloud-github-action@v1.1
+    - name: End the code quality analysis with Sonar
+      run: Code analysis ended
