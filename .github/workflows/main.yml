@@ -1,0 +1,27 @@
+name: Main
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.200-preview-014883
+    - name: Build marketing API
+      run: dotnet build src/Services/Marketing/Marketing.Api/Marketing.Api.csproj --configuration Release
+    - name: Build outgoing communications API
+      run: dotnet build src/Services/OutgoingCommunications/OutgoingCommunications.Api/OutgoingCommunications.Api.csproj --configuration Release
+    - name: Build website
+      run: dotnet build src/Web/WebMvc/WebMvc.csproj
+    - name: Run the marketing API sonar analysis
+      uses: Secbyte/dotnet-sonarscanner@2.1
+      with:
+        projectName: Marketing API
+        projectBaseDir: src/Services/Marketing/Marketing.Api/Marketing.Api.csproj
+        orgnization: Open Code Camp
