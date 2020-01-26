@@ -1,0 +1,28 @@
+name: Code quality analysis
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Start the code quality analysis with Sonar
+      run: echo Hello, world!
+    - name: Run the marketing API sonar analysis
+      uses: Secbyte/dotnet-sonarscanner@2.1
+      with: 
+         # Command to invoke build
+        buildCommand: dotnet build src/Services/Marketing/Marketing.Api/Marketing.Api.csproj --configuration Release
+        # Command to invoke tests
+        testCommand: dotnet test src/Services/Marketing/Marketing.UnitTests/Marketing.UnitTests.csproj --configuration Release
+        # Specifies the key of the analyzed project in SonarQube
+        projectKey: MarketingApiKey
+        # Specifies the name of the analyzed project in SonarQube
+        projectName: Marketing API
+        # The server URL
+        sonarHostname: https://sonarcloud.io
+        # Organisation
+        sonarOrganisation: Open Code Camp 
