@@ -29,6 +29,7 @@ namespace OpenCodeCamp.Services.OutgoingCommunications.Api
                    webBuilder.UseContentRoot(Directory.GetCurrentDirectory());
                    webBuilder.UseConfiguration(GetConfiguration());
                    webBuilder.UseSerilog();
+                   webBuilder.UseIISIntegration();
                });
 
         public static int Main(string[] args)

@@ -101,7 +101,6 @@ namespace OpenCodeCamp.WebMvc
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-
             app.UseRequestLocalization(new RequestLocalizationOptions
             {
                 //ApplyCurrentCultureToResponseHeaders = true
@@ -117,18 +116,6 @@ namespace OpenCodeCamp.WebMvc
             // Execute the matched endpoint.
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapControllerRoute(
-                //   name: "Test1",
-                //   pattern: "test1",
-                //   defaults: new { lang = "en" },
-                //   constraints: new { Controller = "Marketing", action = "Test" });
-
-                //endpoints.MapControllerRoute(
-                //   name: "Test2",
-                //   pattern: "test2",
-                //   defaults: new { lang = "en", Controller = "Marketing", action = "Test" },
-                //   constraints: new { });
-
                 endpoints.MapControllerRoute(
                     name: "NewsletterSubscriptionConfirmation",
                     pattern: "confirm-newsletter-subscription/{email}/{token}",

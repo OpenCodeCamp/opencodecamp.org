@@ -6,30 +6,35 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 
-# Keep the project list and command dotnet restore identical in all Dockfiles to maximize image cache utilization
-COPY OpenCodeCamp-ServicesAndWebApps.sln .
-#COPY docker-compose.dcproj /src/
-COPY src/BuildingBlocks/EventBus/EventBus/EventBus.csproj src/BuildingBlocks/EventBus/EventBus/
-COPY src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.csproj src/BuildingBlocks/EventBus/EventBusRabbitMQ/
-COPY src/BuildingBlocks/EventBus/EventBusServiceBus/EventBusServiceBus.csproj src/BuildingBlocks/EventBus/EventBusServiceBus/
-COPY src/BuildingBlocks/EventBus/IntegrationEventLogEF/IntegrationEventLogEF.csproj src/BuildingBlocks/EventBus/IntegrationEventLogEF/
-COPY src/BuildingBlocks/WebHostCustomization/WebHost.Customization/WebHost.Customization.csproj src/BuildingBlocks/WebHostCustomization/WebHost.Customization/
-# Marketing service
-COPY src/Services/Marketing/Marketing.UnitTests/Marketing.UnitTests.csproj src/Services/Marketing/Marketing.UnitTests/
-COPY src/Services/Marketing/Marketing.FunctionalTests/Marketing.FunctionalTests.csproj src/Services/Marketing/Marketing.FunctionalTests/
-COPY src/Services/Marketing/Marketing.Api/Marketing.Api.csproj src/Services/Marketing/Marketing.Api/
-COPY src/Services/Marketing/Marketing.Domain/Marketing.Domain.csproj src/Services/Marketing/Marketing.Domain/
-COPY src/Services/Marketing/Marketing.Infrastructure/Marketing.Infrastructure.csproj src/Services/Marketing/Marketing.Infrastructure/
-# Outgoing communications service
-COPY src/Services/OutgoingCommunications/OutgoingCommunications.UnitTests/OutgoingCommunications.UnitTests.csproj src/Services/OutgoingCommunications/OutgoingCommunications.UnitTests/
-COPY src/Services/OutgoingCommunications/OutgoingCommunications.FunctionalTests/OutgoingCommunications.FunctionalTests.csproj src/Services/OutgoingCommunications/OutgoingCommunications.FunctionalTests/
-COPY src/Services/OutgoingCommunications/OutgoingCommunications.Api/OutgoingCommunications.Api.csproj src/Services/OutgoingCommunications/OutgoingCommunications.Api/
-COPY src/Services/OutgoingCommunications/OutgoingCommunications.Domain/OutgoingCommunications.Domain.csproj src/Services/OutgoingCommunications/OutgoingCommunications.Domain/
-COPY src/Services/OutgoingCommunications/OutgoingCommunications.Infrastructure/OutgoingCommunications.Infrastructure.csproj src/Services/OutgoingCommunications/OutgoingCommunications.Infrastructure/
-# Web apps
-COPY src/Web/WebMvc/WebMvc.csproj src/Web/WebMvc/
+COPY "OpenCodeCamp.sln" "OpenCodeCamp.sln"
 
-RUN dotnet restore OpenCodeCamp-ServicesAndWebApps.sln
+COPY "BuildingBlocks/EventBus/EventBus/EventBus.csproj" "BuildingBlocks/EventBus/EventBus/EventBus.csproj"
+COPY "BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.csproj" "BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.csproj"
+COPY BuildingBlocks/EventBus/EventBusServiceBus/EventBusServiceBus.csproj BuildingBlocks/EventBus/EventBusServiceBus/EventBusServiceBus.csproj
+COPY BuildingBlocks/EventBus/IntegrationEventLogEF/IntegrationEventLogEF.csproj BuildingBlocks/EventBus/IntegrationEventLogEF/IntegrationEventLogEF.csproj
+COPY BuildingBlocks/WebHostCustomization/WebHost.Customization/WebHost.Customization.csproj BuildingBlocks/WebHostCustomization/WebHost.Customization/WebHost.Customization.csproj
+# Marketing service
+COPY Services/Marketing/Marketing.UnitTests/Marketing.UnitTests.csproj Services/Marketing/Marketing.UnitTests/Marketing.UnitTests.csproj
+COPY Services/Marketing/Marketing.FunctionalTests/Marketing.FunctionalTests.csproj Services/Marketing/Marketing.FunctionalTests/Marketing.FunctionalTests.csproj
+COPY Services/Marketing/Marketing.Api/Marketing.Api.csproj Services/Marketing/Marketing.Api/Marketing.Api.csproj
+COPY Services/Marketing/Marketing.Domain/Marketing.Domain.csproj Services/Marketing/Marketing.Domain/Marketing.Domain.csproj
+COPY Services/Marketing/Marketing.Infrastructure/Marketing.Infrastructure.csproj Services/Marketing/Marketing.Infrastructure/Marketing.Infrastructure.csproj
+# Outgoing communications service
+COPY Services/OutgoingCommunications/OutgoingCommunications.UnitTests/OutgoingCommunications.UnitTests.csproj Services/OutgoingCommunications/OutgoingCommunications.UnitTests/OutgoingCommunications.UnitTests.csproj
+COPY Services/OutgoingCommunications/OutgoingCommunications.FunctionalTests/OutgoingCommunications.FunctionalTests.csproj Services/OutgoingCommunications/OutgoingCommunications.FunctionalTests/OutgoingCommunications.FunctionalTests.csproj
+COPY Services/OutgoingCommunications/OutgoingCommunications.Api/OutgoingCommunications.Api.csproj Services/OutgoingCommunications/OutgoingCommunications.Api/OutgoingCommunications.Api.csproj
+COPY Services/OutgoingCommunications/OutgoingCommunications.Domain/OutgoingCommunications.Domain.csproj Services/OutgoingCommunications/OutgoingCommunications.Domain/OutgoingCommunications.Domain.csproj
+COPY Services/OutgoingCommunications/OutgoingCommunications.Emails/OutgoingCommunications.Emails.csproj Services/OutgoingCommunications/OutgoingCommunications.Emails/OutgoingCommunications.Emails.csproj
+COPY Services/OutgoingCommunications/OutgoingCommunications.Infrastructure/OutgoingCommunications.Infrastructure.csproj Services/OutgoingCommunications/OutgoingCommunications.Infrastructure/OutgoingCommunications.Infrastructure.csproj
+# Web apps
+COPY "Web/WebMvc/WebMvc.csproj" "Web/WebMvc/WebMvc.csproj"
+COPY "Web/StaticFiles/StaticFiles.csproj" "Web/StaticFiles/StaticFiles.csproj"
+
+#COPY "docker-compose.dcproj" "docker-compose.dcproj"
+
+#COPY "NuGet.config" "NuGet.config"
+
+RUN dotnet restore "OpenCodeCamp.sln"
 
 COPY . .
 WORKDIR /src/src/Web/WebMvc

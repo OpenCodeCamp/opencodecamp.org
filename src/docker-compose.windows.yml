@@ -1,0 +1,23 @@
+# This file contains specific services build and images for Windows Containers.
+#
+# MUST be used alongside "docker-compose.yml" in all windows container commands
+
+version: '3.4'
+
+services:
+  sql.data:
+    image: microsoft/mssql-server-windows-developer
+
+  rabbitmq:
+    image: spring2/rabbitmq
+
+  webmvc:
+    build:
+      args:
+        NODE_IMAGE: stefanscherer/node-windows:10
+
+
+networks:
+  default:
+    external:
+      name: nat

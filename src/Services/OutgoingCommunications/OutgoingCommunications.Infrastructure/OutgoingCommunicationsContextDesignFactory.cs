@@ -53,6 +53,11 @@
             {
                 return Task.CompletedTask;
             }
+
+            public Task<object> Send(object request, CancellationToken cancellationToken = default)
+            {
+                return Task.FromResult<object>(default(object));
+            }
         }
     }
 }

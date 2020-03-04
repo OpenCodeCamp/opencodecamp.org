@@ -21,6 +21,7 @@ namespace OpenCodeCamp.StaticFiles
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseIISIntegration();
                 });
     }
 }

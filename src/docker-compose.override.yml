@@ -1,0 +1,63 @@
+version: '3.4'
+
+# The default docker-compose.override file can use the "localhost" as the external name for testing web apps within the same dev machine. 
+# The ESHOP_EXTERNAL_DNS_NAME_OR_IP environment variable is taken, by default, from the ".env" file defined like: 
+#     ESHOP_EXTERNAL_DNS_NAME_OR_IP=localhost
+# but values present in the environment vars at runtime will always override those defined inside the .env file
+# An external IP or DNS name has to be used (instead localhost and the 10.0.75.1 IP) when testing the Web apps and the Xamarin apps from remote machines/devices using the same WiFi, for instance.
+
+services:
+  seq:
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - "5340:80"
+
+  sql.data:
+    environment:
+      - SA_PASSWORD=dskj43ez3lkds9768
+      - ACCEPT_EULA=Y
+    ports:
+      - "5433:1433"    # Important: In a production environment your should remove the external port
+
+  rabbitmq:
+    ports:
+      - "15672:15672"  # Important: In a production environment your should remove the external port
+      - "5672:5672"    # Important: In a production environment your should remove the external port
+
+  marketing.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ConnectionString=${OCC_AZURE_MARKETING_DB:-Server=DESKTOP-F56BUH3\\SQLEXPRESS;Database=OCC.G2;Trusted_Connection=True;User Id=sadev2;Password=dskj43ez3lkds9768;}
+      - marketingUrl=http://marketing.api 
+      - EventBusConnection=localhost
+      - EventBusUserName=guest
+      - EventBusPassword=guest
+      - AzureServiceBusEnabled=False
+      - AzureStorageEnabled=False
+    ports:
+      - "5101:80"   # Important: In a production environment your should remove the external port (5101) kept here for microservice debugging purposes. 
+                    # The API Gateway redirects and access through the internal port (80).
+
+  outgoingcommunications.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ConnectionString=${OCC_AZURE_OUTGOINGCOMMUNICATIONS_DB:-Server=DESKTOP-F56BUH3\\SQLEXPRESS;Database=OCC.G2;Trusted_Connection=True;User Id=sadev2;Password=dskj43ez3lkds9768;}
+      - EventBusConnection=localhost
+      - EventBusUserName=guest
+      - EventBusPassword=guest
+      - AzureServiceBusEnabled=False
+      - CheckUpdateTime=30000
+    ports:
+      - "5102:80"   # Important: In a production environment your should remove the external port (5102) kept here for microservice debugging purposes. 
+                    # The API Gateway redirects and access through the internal port (80).
+
+  webmvc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - MarketingUrl=http://marketing.api     
+    ports:
+      - "5100:80"

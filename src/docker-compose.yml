@@ -1,0 +1,51 @@
+version: '3.4'
+
+services:
+
+  seq:
+    image: datalust/seq:latest
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2017-latest 
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+  marketing.api:
+    image: ${REGISTRY:-occ}/marketing.api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/Marketing/Marketing.Api/Dockerfile
+    depends_on:
+      - sqldata
+      - rabbitmq
+    ports:
+      - "5101:80"
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  outgoingcommunications.api:
+    image: ${REGISTRY:-occ}/outgoingcommunications.api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/OutgoingCommunications/OutgoingCommunications.Api/Dockerfile    
+    depends_on:
+      - sqldata
+      - rabbitmq
+    ports:
+      - "5102:80"
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  webmvc:
+    image: ${REGISTRY:-occ}/webmvc:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Web/WebMvc/Dockerfile    
+    depends_on:
+      - marketing.api
+      - outgoingcommunications.api
+    ports:
+      - "5103:80"
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development

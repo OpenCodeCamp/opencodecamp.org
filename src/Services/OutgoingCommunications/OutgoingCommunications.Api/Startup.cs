@@ -8,6 +8,7 @@ namespace OpenCodeCamp.Services.OutgoingCommunications.Api
     using Autofac;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.HttpsPolicy;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Razor;

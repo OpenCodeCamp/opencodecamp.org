@@ -82,6 +82,7 @@ namespace OpenCodeCamp.Services.Marketing.Api
                     webBuilder.UseContentRoot(Directory.GetCurrentDirectory());
                     webBuilder.UseConfiguration(GetConfiguration());
                     webBuilder.UseSerilog();
+                    webBuilder.UseIISIntegration();
                 });
 
         public static IHostBuilder CreateHostBuilder2(string[] args) =>

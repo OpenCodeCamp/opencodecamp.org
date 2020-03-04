@@ -1,0 +1,33 @@
+version: '3.4'
+
+# ONLY NEEDED WHEN RUNNING WINDOWS CONTAINERS
+#
+# This file sets the containers' environment variables:
+#
+#  - EventBusUerName
+#  - EventBusPassword
+#
+# To the default username & password used in the spring2/rabbitmq image.
+#
+# If you are using any other rabbitmq image with any other username/pwd then you can:
+#
+#  Set your shell environment variables:
+#   - OCC_SERVICE_BUS_USERNAME
+#   - OCC_SERVICE_BUS_PASSWORD
+#
+# With the appropiate values (note that you can use .env file also) AND DO NOT USE THIS FILE when launching windows container:
+#
+# docker-compose -f docker-compose-windows.yml -f docker-compose.override.yml up
+# INSTEAD OF
+# docker-compose -f docker-compose-windows.yml -f docker-compose.override.yml -f docker-compose.override.windows.yml up
+
+services:      
+  marketing.api:
+    environment:
+      - EventBusUserName=guest
+      - EventBusPassword=guest
+
+  outgoingcommunications.api:
+    environment:
+      - EventBusUserName=guest
+      - EventBusPassword=guest
