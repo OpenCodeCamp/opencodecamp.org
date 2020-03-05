@@ -25,7 +25,7 @@ jobs:
       uses: neenjaw/compile-mermaid-markdown-action@master
       with:
         files: ${{ steps.getfile.outputs.files }}
-        output: ''
+        output: 'img'
       env:
         HIDE_CODEBLOCKS: 1
     - name: show changes
