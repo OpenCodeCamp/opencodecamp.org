@@ -1,0 +1,18 @@
+graph LR
+	subgraph Events
+	NewsletterSubscriptionSubmittedIntegrationEvent:::event
+	NewsletterSubscriptionConfirmedIntegrationEvent:::event
+	end
+	subgraph HTTP Requests
+	POST
+	end
+    subgraph Maketing Api
+	Api
+	database[(SQL Server Database)]
+	POST--create-->Api
+	POST--confirm-->Api
+    Api-->database
+	Api-. throw when a user confirms his newsletter subscription .-> NewsletterSubscriptionConfirmedIntegrationEvent
+	Api-. throw when a user suscribe to the newsletter .-> NewsletterSubscriptionSubmittedIntegrationEvent
+    end
+	classDef event fill:#f96;
